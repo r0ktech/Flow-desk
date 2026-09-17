@@ -9,7 +9,6 @@ import {
   Monitor,
   Camera,
   Mail,
-  Monitor,
   FileText,
   ChevronRight,
   CheckCircle2,
@@ -241,7 +240,7 @@ export default function SettingsPage() {
                 <div className="p-4 flex items-start justify-between gap-4">
                   <div className="flex items-start gap-3">
                     <div className="w-9 h-9 rounded-md bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 flex items-center justify-center flex-shrink-0">
-                      <Desktop className="w-4.5 h-4.5" />
+                      <Monitor className="w-4.5 h-4.5" />
                     </div>
                     <div>
                       <div className="text-sm font-medium text-slate-900 dark:text-slate-100">Desktop notifications</div>
