@@ -11,7 +11,7 @@ import {
   ChevronRight,
   Menu,
   X,
-  Flow,
+  Workflow,
 } from 'lucide-react';
 import clsx from 'clsx';
 import Avatar from './ui/Avatar';
@@ -34,10 +34,10 @@ export default function Sidebar({ open, setOpen, mobile }) {
       <div className="flex items-center gap-2.5 h-14 px-3 border-b border-slate-200 dark:border-slate-800">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-md bg-gradient-to-br from-indigo-500 to-violet-600 text-white flex items-center justify-center shadow-sm">
-            <Flow className="w-4.5 h-4.5" />
+            <Workflow className="w-4.5 h-4.5" />
           </div>
           <div>
-            <div className="text-sm font-semibold text-slate-900 dark:text-slate-100 leading-none">Flowdesk</div>
+            <div className="text-sm font-semibold text-slate-900 dark:text-slate-100 leading-none">Workflowdesk</div>
             <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Support platform</div>
           </div>
         </Link>
@@ -125,9 +125,9 @@ export default function Sidebar({ open, setOpen, mobile }) {
           <div className="flex items-center justify-between h-14 px-4 border-b border-slate-200 dark:border-slate-800 lg:hidden">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-md bg-gradient-to-br from-indigo-500 to-violet-600 text-white flex items-center justify-center">
-                <Flow className="w-4.5 h-4.5" />
+                <Workflow className="w-4.5 h-4.5" />
               </div>
-              <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">Flowdesk</div>
+              <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">Workflowdesk</div>
             </Link>
             <button
               onClick={() => setOpen(!open)}

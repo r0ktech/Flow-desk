@@ -9,7 +9,7 @@ import {
   Monitor,
   Camera,
   Mail,
-  Desktop,
+  Monitor,
   FileText,
   ChevronRight,
   CheckCircle2,

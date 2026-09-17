@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { getAvatarColor, getInitials } from '../utils/format';
+import { getAvatarColor, getInitials } from '../../utils/format';
 
 export default function Avatar({ name, seed, size = 'md', src, className, status }) {
   const sizeClasses = {
