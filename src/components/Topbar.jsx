@@ -11,12 +11,15 @@ import {
   Inbox,
   Ticket,
   Users,
+  Sun,
+  Moon,
 } from "lucide-react";
 import clsx from "clsx";
 import Avatar from "./ui/Avatar";
 import Dropdown from "./ui/Dropdown";
 import Badge from "./ui/Badge";
 import { useAppState } from "../context/AppStateContext";
+import { useTheme } from "../context/ThemeContext";
 import { formatRelative } from "../utils/format";
 
 const workspaces = [
@@ -266,6 +269,7 @@ export default function Topbar({ pageTitle, pageDescription }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const { notifications, dismissNotification, markAllNotificationsRead } =
     useAppState();
+  const { effectiveTheme, setTheme } = useTheme();
   const unreadCount = notifications.filter((n) => !n.read).length;
 
   const workspaceSwitcher = (
@@ -343,6 +347,21 @@ export default function Topbar({ pageTitle, pageDescription }) {
             </button>
           </div>
           <div className="flex items-center gap-1 ml-auto">
+            <button
+              type="button"
+              onClick={() =>
+                setTheme(effectiveTheme === "dark" ? "light" : "dark")
+              }
+              className="h-9 w-9 flex items-center justify-center rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-100 transition-colors"
+              aria-label={`Switch to ${effectiveTheme === "dark" ? "light" : "dark"} mode`}
+              title={`Switch to ${effectiveTheme === "dark" ? "light" : "dark"} mode`}
+            >
+              {effectiveTheme === "dark" ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
+            </button>
             <Dropdown
               align="right"
               menuClassName="min-w-[360px] max-h-[80vh]"
