@@ -31,20 +31,20 @@ export default function Sidebar({ open, setOpen, mobile }) {
 
   const navContent = (
     <>
-      <div className="flex items-center gap-2.5 h-14 px-3 border-b border-slate-200 dark:border-slate-800">
+      <div className="flex items-center gap-2.5 h-16 px-4 border-b border-[#dfe5e0] dark:border-[#26312e]">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-md bg-gradient-to-br from-indigo-500 to-violet-600 text-white flex items-center justify-center shadow-sm">
+          <div className="w-8 h-8 rounded-md bg-[#153f35] text-[#d9f5e9] flex items-center justify-center shadow-[0_3px_0_#9dcabb]">
             <Workflow className="w-4.5 h-4.5" />
           </div>
           <div>
-            <div className="text-sm font-semibold text-slate-900 dark:text-slate-100 leading-none">Workflowdesk</div>
-            <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Support platform</div>
+            <div className="display-font text-[15px] font-semibold tracking-[-0.02em] text-[#17201e] dark:text-[#f3f5f2] leading-none">Flowdesk</div>
+            <div className="text-[11px] text-[#74817c] dark:text-[#93a29d] mt-1">Support operations</div>
           </div>
         </Link>
       </div>
 
       <nav className="flex-1 px-2 py-3 space-y-0.5 overflow-y-auto scrollbar-thin">
-        <div className="px-2 pb-1 pt-1 text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">Workspace</div>
+        <div className="px-2 pb-2 pt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8a9791] dark:text-[#708079]">Workspace</div>
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = item.end ? location.pathname === item.to : location.pathname.startsWith(item.to);
@@ -54,16 +54,16 @@ export default function Sidebar({ open, setOpen, mobile }) {
               to={item.to}
               onClick={() => mobile && setOpen(false)}
               className={clsx(
-                'group flex items-center gap-2.5 px-2.5 py-2 rounded-md text-sm font-medium transition-colors',
+                'group flex items-center gap-2.5 px-2.5 py-2 rounded-[6px] text-sm font-medium transition-colors',
                 isActive
-                  ? 'bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-100'
-                  : 'text-slate-600 hover:bg-slate-100/60 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-slate-200'
+                  ? 'bg-[#e4f0eb] text-[#153f35] dark:bg-[#19372f] dark:text-[#d9f5e9]'
+                  : 'text-[#6b7973] hover:bg-[#eef2ef] hover:text-[#17201e] dark:text-[#93a29d] dark:hover:bg-[#1a2421] dark:hover:text-[#f3f5f2]'
               )}
             >
-              <Icon className={clsx('w-4 h-4 flex-shrink-0', isActive ? 'text-indigo-500' : 'text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300')} />
+              <Icon className={clsx('w-4 h-4 flex-shrink-0', isActive ? 'text-[#1d725d]' : 'text-[#9aa6a0] group-hover:text-[#53645c] dark:group-hover:text-[#c1cdc7]')} />
               <span className="flex-1">{item.label}</span>
               {item.badge && (
-                <span className="inline-flex items-center justify-center rounded-full bg-indigo-50 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300 min-w-[18px] h-[18px] px-1 text-[10px] font-semibold">
+                  <span className="inline-flex items-center justify-center rounded-full bg-[#cce8df] text-[#1d725d] dark:bg-[#24564a] dark:text-[#d9f5e9] min-w-[18px] h-[18px] px-1 text-[10px] font-semibold">
                   {item.badge}
                 </span>
               )}
@@ -72,7 +72,7 @@ export default function Sidebar({ open, setOpen, mobile }) {
         })}
       </nav>
 
-      <div className="px-2 py-2 border-t border-slate-200 dark:border-slate-800 space-y-0.5">
+      <div className="px-2 py-3 border-t border-[#dfe5e0] dark:border-[#26312e] space-y-0.5">
         <NavLink
           to="/help"
           onClick={() => mobile && setOpen(false)}
